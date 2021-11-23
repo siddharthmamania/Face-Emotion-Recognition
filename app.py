@@ -9,7 +9,7 @@ from streamlit_webrtc import webrtc_streamer, VideoTransformerBase,  RTCConfigur
 # load model
 emotion_dict = {0:'angry', 1 :'neutral', 2: 'fear', 3: 'happy', 4:'sad', 5: 'surprise'}
 # load json and create model
-json_file = open(r'\Users\HP\fer\model1.json', 'r')
+json_file = open(r'model1.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 classifier = model_from_json(loaded_model_json)
@@ -19,7 +19,7 @@ classifier.load_weights("model_final.h5")
 
 #load face
 try:
-    face_cascade = cv2.CascadeClassifier(r'\Users\HP\fer\haarcascade_frontalface_default2.xml')
+    face_cascade = cv2.CascadeClassifier(r'haarcascade_frontalface_default2.xml')
 except Exception:
     st.write("Error loading cascade classifiers")
 
